@@ -62,29 +62,29 @@ class SimpleCompletion(unittest.TestCase):
             mode="python-mode",
         ))
 
-    # def test_cpp(self):
-    #     try_completion(SingleFile(
-    #         filename="test.cpp",
-    #         code="""
-    #                 #include <vector>
-    #
-    #                 int main() {
-    #                   std::vector<int> v;
-    #                   v.cle""",
-    #         expectation="clear()",
-    #         mode="c++-mode",
-    #     ))
-    #     try_completion(SingleFile(
-    #         filename="test.cpp",
-    #         code="""
-    #         #include <vector>
-    #
-    #         int main() {
-    #           auto v = new std::vector<int>();
-    #           v->cle""",
-    #         expectation="clear()",
-    #         mode="c++-mode",
-    #     ))
+    def test_cpp(self):
+        try_completion(SingleFile(
+            filename="test.cpp",
+            code="""
+                    #include <vector>
+
+                    int main() {
+                      std::vector<int> v;
+                      v.cle""",
+            expectation="clear()",
+            mode="c++-mode",
+        ))
+        # try_completion(SingleFile(
+        #     filename="test.cpp",
+        #     code="""
+        #     #include <vector>
+        #
+        #     int main() {
+        #       auto v = new std::vector<int>();
+        #       v->cle""",
+        #     expectation="clear()",
+        #     mode="c++-mode",
+        # ))
 
     def test_go(self):
         try_completion(SingleFile(
